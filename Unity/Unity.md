@@ -306,6 +306,32 @@ https://docs.unity.cn/cn/2021.2/Manual/unity-architecture.html
 
 使用基于 JIT 的脚本后端的好处是编译时间通常比 AOT 快得多，而且它与平台无关。
 
+
+
+# Learning Things
+
+## Image与Raw Image
+
+[Unity中的Image和Raw Image_Hello Bug.的博客-CSDN博客](https://liuhaowen.blog.csdn.net/article/details/103807887?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-103807887-blog-108714303.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-103807887-blog-108714303.pc_relevant_default&utm_relevant_index=1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Unity3D高级编程（主程手记）笔记
 
 架构的好坏评估点
@@ -381,46 +407,6 @@ RenderMode（渲染模式）
 3. World Space。主要用于当UI物体放在3D世界中时
 
 ##### 2.
-
-
-
-
-
-### 4.6.14 GC的优化
-
-GC(Garbage Collection)。
-
-游戏运行，数据主要贮存在内存中，当数据不再需要时，这部分内存可以被回收再次利用。
-
-内存垃圾指当前废弃数据所占用的内存，GC是指将废弃的内存进行回收，再次使用的过程。
-
-进行GC操作时，首先会检查被GC记录的每个变量，确定变量是否处于孤岛状态，或引用是否处于激活状态。如果不处于激活/孤岛状态，则标记为可回收，标记的变量会在回收程序中被移除，内存也会被回收。
-
-
-
-GC相当耗时，对象、变相越多，检查操作越多，耗时越长。
-
-内存分配和申请系统内存是如何影响耗时的。
-
-1. Unity3D内部有两个内存管理池:堆栈内存和堆内存。堆栈(stack)内存主要用来存储较小和短暂的数据。堆(heap)内存主要用来存储较大和存储时间较长的数据。
-
-2. Unity3D中的变量只会在堆栈内存和堆内存上进行内存分配，变量要么存储在堆栈内存上，要么存储在堆内存上。
-
-3. 只要变量处于激活状态，占用的内存就会被标记为使用状态，该内存则处于被分配的状态。
-
-4. 一旦变量不再处于激活状态，其占用的内存不再需要，该内存可被回收到内存池中再次使用，这就是**内存回收**。处于堆栈上的内存回收很迅速，处于堆内存上的垃圾并不是及时回收的，此时其对应的内存会被标记为使用状态。
-
-5. GC主要是指堆上的内存分配和回收，Unity3D会定时对堆内存进行GC
-
-6. Unity3D的堆内存只会增加，不会减少。当堆内存不足时，会向系统申请更多内存，但不会在空闲时归还给系统，除非应用结束重新开始。
-
-
-
-
-
-
-
-
 
 Learning 08_22
 
