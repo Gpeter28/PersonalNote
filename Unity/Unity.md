@@ -306,8 +306,6 @@ https://docs.unity.cn/cn/2021.2/Manual/unity-architecture.html
 
 使用基于 JIT 的脚本后端的好处是编译时间通常比 AOT 快得多，而且它与平台无关。
 
-
-
 # Learning Things
 
 ## Image与Raw Image
@@ -320,15 +318,14 @@ https://docs.unity.cn/cn/2021.2/Manual/unity-architecture.html
 
 
 
+## 获取子/孙物体
 
+```csharp
+var arr = go.GetComponentsInChilderen<Transform>();
 
-
-
-
-
-
-
-
+// 第一个为自身 arr[0]
+// 1以后为子物体
+```
 
 
 
