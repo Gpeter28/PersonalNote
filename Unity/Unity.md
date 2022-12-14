@@ -312,12 +312,6 @@ https://docs.unity.cn/cn/2021.2/Manual/unity-architecture.html
 
 [Unity中的Image和Raw Image_Hello Bug.的博客-CSDN博客](https://liuhaowen.blog.csdn.net/article/details/103807887?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-103807887-blog-108714303.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-103807887-blog-108714303.pc_relevant_default&utm_relevant_index=1)
 
-
-
-
-
-
-
 ## 获取子/孙物体
 
 ```csharp
@@ -326,8 +320,6 @@ var arr = go.GetComponentsInChilderen<Transform>();
 // 第一个为自身 arr[0]
 // 1以后为子物体
 ```
-
-
 
 # Unity3D高级编程（主程手记）笔记
 
@@ -343,7 +335,7 @@ var arr = go.GetComponentsInChilderen<Transform>();
 
 5.容错性以及错误的感知力
 
-## C# 技术要点
+## 2.C# 技术要点
 
 ### List源码
 
@@ -375,7 +367,7 @@ event是在delegate上又做了一次封装，这次封装的意义是，限制�
 
 最好O(nlgn) 最坏 O(n²)
 
-## 用户界面
+## 4.用户界面
 
 ### 4.1用户界面系统的比较
 
@@ -409,8 +401,6 @@ Learning 08_22
 
 [Unity Roguelike Tutorial : Part 8 - Items and Inventory - YouTube](https://www.youtube.com/watch?v=Mjpx0o0GxR4)
 
-
-
 #### 4.6.14 GC的优化
 
 内存分配和申请系统内存如何影响耗时
@@ -420,10 +410,6 @@ Learning 08_22
 3. 一旦不在激活状态，内存不再需要可以被回收。堆栈上的内存回收极其快速，堆内存上的垃圾不是及时回收的。
 4. GC主要指的是堆上的内存分配和回收。Unity会定时进行GC
 5. Unity3D堆内存只会增加，不会减少。当内存不足时，会向系统申请更多内存，但不会在空闲时还给系统。
-
-
-
-
 
 ##### 堆内存的碎片化导致的性能问题
 
@@ -435,23 +421,17 @@ Learning 08_22
 2. 自动的触发GC操作，不同平台频率不同
 3. 被强制执行GC操作。
 
-
-
 通过以下三种方法来降低GC操作得影响
 
 1. 减少GC的运行次数
 2. 减少单次GC的运行时间
 3. 将GC的运行时间延迟，避免在关键时刻触发。可以在加载场景时调用。
 
-
-
 三种策略实现上述方法
 
 1. 对游戏进行重构，**减少**堆内存的分配和引用的分配。更少的变量和引用会减少GC操作中的检测个数，从而提高GC操作的运行效率。
 2. 降低堆内存分配和回收的频率，尤其是在关键时刻。更少地触发GC操作，同时也降低堆内存的碎片化。
 3. 试着分析GC操作和堆内存扩展的时间
-
-
 
 减少内存垃圾的方法有以下几种
 
@@ -464,3 +444,35 @@ Learning 08_22
 7. 函数引用
 8. LINQ和敞亮表达式（会触发装箱）
 9. 主动GC
+
+## 6.网络通信
+
+### 6.1 TCP与UDP
+
+TCP(Transmission Control Protocol)
+
+UDP(User Data Protocol)
+
+
+
+
+
+### 6.2 C#实现TCP
+
+#### 6.2.1 程序实现TCP长连接
+
+- 建立连接
+
+- 断线检测
+
+- 网络协议
+
+- 发送和接受队列缓冲
+
+- 发送数据合并
+
+- 线程死锁策略
+
+
+
+程序建立和实现连接的必备要素-----------------------------------------------

@@ -1,0 +1,15 @@
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\bin\Debug\net6.0\AllSortingAlgorithms.exe
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\bin\Debug\net6.0\AllSortingAlgorithms.deps.json
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\bin\Debug\net6.0\AllSortingAlgorithms.runtimeconfig.json
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\bin\Debug\net6.0\AllSortingAlgorithms.dll
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\bin\Debug\net6.0\AllSortingAlgorithms.pdb
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\obj\Debug\net6.0\AllSortingAlgorithms.csproj.AssemblyReference.cache
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\obj\Debug\net6.0\AllSortingAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\obj\Debug\net6.0\AllSortingAlgorithms.AssemblyInfoInputs.cache
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\obj\Debug\net6.0\AllSortingAlgorithms.AssemblyInfo.cs
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\obj\Debug\net6.0\AllSortingAlgorithms.csproj.CoreCompileInputs.cache
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\obj\Debug\net6.0\AllSortingAlgorithms.dll
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\obj\Debug\net6.0\refint\AllSortingAlgorithms.dll
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\obj\Debug\net6.0\AllSortingAlgorithms.pdb
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\obj\Debug\net6.0\AllSortingAlgorithms.genruntimeconfig.cache
+E:\src\C#\VS2022\DailyLearning\AllSortingAlgorithms\AllSortingAlgorithms\obj\Debug\net6.0\ref\AllSortingAlgorithms.dll
