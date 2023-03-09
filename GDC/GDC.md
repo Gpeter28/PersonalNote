@@ -4,7 +4,7 @@
 
 https://www.bilibili.com/video/BV1av4y1M77T?spm_id_from=333.999.0.0&vd_source=f19f5f19e1fcf59014cb350c87890446
 
-
+https://zhuanlan.zhihu.com/p/30538626
 
 Learning Words
 
@@ -28,8 +28,6 @@ illustrate    v.加插图于
 
 shovelware    n. 盗版(Assets flip)
 
-
-
 #### Dosen't Stand out
 
 Prove Steam Shoppers that u are not shovelware or asset flips
@@ -42,11 +40,7 @@ Prove Steam Shoppers that u are not shovelware or asset flips
 
 - Game Assets throughout your page
 
-
-
 Put more Effort into it than all the other game on Steam
-
-
 
 #### Unclear genre or what u 'do' in the game
 
@@ -56,13 +50,9 @@ Put more Effort into it than all the other game on Steam
 
 - Trope-conscious capsules
 
-
-
 #### Not working with Steam Algorithm
 
 Tags and learning other Game's Tag
-
-
 
 #### Dead Game
 

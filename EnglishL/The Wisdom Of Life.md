@@ -4,8 +4,6 @@ Interpret  v. 诠释；说明；把...理解为
 
 appeal  n. 上诉；吸引力；申诉；魅力  v. 上诉；呼吁；申诉；恳求
 
-
-
 Endow with v. 捐赠；赋予
 
 freshness 生机
