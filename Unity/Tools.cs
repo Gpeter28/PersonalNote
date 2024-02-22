@@ -14,7 +14,7 @@ namespace Peter28.Tools
         else
             return Math.Atan2(dx, dy) * Rad2Deg;
       }
-
+      // Tutuorials https://www.youtube.com/watch?v=-dGi2Ffdiuk&list=PLFt_AvWsXl0fnA91TcmkRyhhixX9CO3Lw
       public Vector2 Angle2Vec2(float angle)
       {
          public float angleRad = angle / Deg2Rad;
