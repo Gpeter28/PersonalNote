@@ -1,12 +1,8 @@
-[BeginPlay | Learning path](https://dev.epicgames.com/community/learning/paths/0w/unreal-engine-beginplay)
+`[BeginPlay | Learning path](https://dev.epicgames.com/community/learning/paths/0w/unreal-engine-beginplay)
 
 # Engine Structe
 
 ![Engine Structure](.\Pictures\BeginPlay_Engine_Structure_Schematic.png)
-
-
-
-
 
 Config 有特殊层次
 
@@ -14,19 +10,9 @@ Engine下为    Base*.ini
 
 项目下为        Default*.ini
 
-
-
 简单逻辑覆盖
 
 Engine\Config\Base =>  Engine\Platform => Project\Config  =>  Project\Platform => Project\Save\Config\Platform ...
-
-
-
-
-
-
-
-
 
 # Programming
 
@@ -40,8 +26,6 @@ UCLASS, USTRUCT, UPROPERTY, UFUNCTION, UENUM
 
 主要是将原生类暴露给蓝图/反射系统 (?)
 
-
-
 ## Memory
 
 Loadiing Assets 加载资源
@@ -50,11 +34,7 @@ Garbage Collector GC
 
 => Memory Management 自动内存管理器
 
-
-
 ## Core Features
-
-
 
 ### Numbers
 
@@ -62,11 +42,7 @@ float/double 浮点
 
 uint 8, 16, 32, 64
 
-
-
 Enum,Struct
-
-
 
 ### Strings
 
@@ -76,25 +52,17 @@ FName 名字
 
 FText 本地化String 任何面向用户的文本
 
-
-
 ### Collections
 
-TArray TMap TSet      
-
-
+TArray TMap TSet
 
 TMap 底层也是用TSet  哈希表桶
 
 `TMap` 是基于 `TSet<TPair<Key, Value>>` 构建的，`TSet` 使用哈希表 + 冲突链（NextHashIndex）+ 稀疏数组存储，具备高效的查找性能、良好的内存管理，以及对引擎功能（GC、序列化、蓝图）的良好支持。
 
-
-
 TMap<Key, Value>
  └─ TSet<TTuple<Key, Value>, TDefaultMapHashableKeyFuncs>
      └─ TSparseArray<TSetElement<TTuple<Key, Value>>>
-
-
 
 SourceCode  Set.h
 
@@ -104,11 +72,7 @@ static FORCEINLINE bool Matches(KeyInitType A, ComparableKey B)
     return A == B;
 }
 
-
-
 MyMap.Find("PlayerA");  // 传入的是 const TCHAR* 或 FString
-
-
 
 // 你可能查找的是 KeyType 本身：
 FString Key = "PlayerA";
@@ -116,8 +80,6 @@ Map.Contains(Key);  // Matches(FString, FString)
 
 // 也可能是一个兼容的类型：
 Map.Contains(TEXT("PlayerA"));  // Matches(FString, const TCHAR*)
-
-
 
 ✅ C++ 术语：这是函数模板的 **模板参数重载技巧（Template Argument Deduction）**
 
@@ -131,8 +93,6 @@ Map.Contains(TEXT("PlayerA"));  // Matches(FString, const TCHAR*)
 | 避免构造完整 Key 类型      | 允许兼容类型通过 `==` 判断                        |
 | 提高泛用性              | 编译期多态，自动匹配正确比较函数                        |
 
-
-
 ### Transform Types
 
 FVector
@@ -143,29 +103,19 @@ FQuat
 
 FTransform
 
-
-
 以上组成基础数据结构
-
-
 
 ### UObject
 
 所有引擎类的基类,为引擎数据可见, 反射可见以及 自动内存管理等功能
 
-
-
 ### Components
 
 UActorComponents没有transform 但 UvvComponent(?)有对应的父Actor
 
-
-
 ### Actor
 
 处理会话, 链接   而且是Levels里的基类.是Component的基础容器
-
-
 
 ## Smart Pointers
 
@@ -179,8 +129,6 @@ TSoftPtr
 
 TSoftClassPtr
 
-
-
 TUniquePtr
 
 TSharePtr
@@ -188,8 +136,6 @@ TSharePtr
 TSharedRef
 
 TWeakPtr
-
-
 
 ### ✅ **一、对象生命周期管理指针**
 
@@ -271,8 +217,6 @@ TWeakPtr
 | `TUniquePtr<T>`                   | ⭐⭐   | 一般用于工具类、Editor 插件        |
 | `TLazyObjectPtr<T>`               | ⭐    | 特殊资源优化需求下使用              |
 
-
-
 ## GamePlay Framework
 
 ### Input Component
@@ -281,15 +225,11 @@ TWeakPtr
 
 会根据玩家Id setup, 类型SourcePawn 的PlayerId
 
-
-
 ### PlayerState
 
-PlayerController的辅助类,存在于Server和所有clients 
+PlayerController的辅助类,存在于Server和所有clients
 
 用于分享player info 在各个client中
-
-
 
 ### Player/ AI Controller
 
@@ -297,21 +237,15 @@ Pawn的大脑    输入被解释为actions
 
 Controller easily possess(具有) and unpossess Pawns. Server和各自客户端都有
 
-
-
 ### Pawn / Character
 
-物理身体 用于表现action和behavior 
+物理身体 用于表现action和behavior
 
 Can be possess by Controller and perform commands
-
-
 
 ### Movement Component
 
 ...
-
-
 
 ### GameState
 
@@ -319,81 +253,51 @@ GameMode辅助类
 
 Sharing Global Info and function for current level
 
-
-
 ### GameMode
 
 Server上   LifeTime Dependant on level
 
 Level执行流程
 
-
-
 GAS, ticking, Mass, Game Features
 
-
-
-
-
 ## Debug and Profile工具
-
-
 
 ### Logging
 
 UE_LOG macro
 
-
-
 ### Visual Logger
 
 Timeline-base Logging 可视化展示游戏内的events
-
-
 
 ### Console
 
 Cvars(Console Variables)
 
-
-
 ### Unreal Insights
 
 最新的,详细的有层级的分析工具 ?
-
-
 
 ### CSV Profiler
 
 Pre-frame timings for render and game threads
 
-
-
 ### LLM
 
 Low Level Memory tracker base in tags
-
-
 
 ### ProfileGPU
 
 DetailGPU time
 
-
-
 ### DumpGPU
 
 dumps a frame's internal resources to disk for inspecting
 
-
-
 ### Gauntlet
 
 Framework to run builds and validate ?
-
-
-
-
 
 # BluePrints
 
