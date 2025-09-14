@@ -1,4 +1,28 @@
-`[BeginPlay | Learning path](https://dev.epicgames.com/community/learning/paths/0w/unreal-engine-beginplay)
+## Basics
+
+UE_LOG 输出日志信息的宏   TEXT也是macro
+
+// 日志分类， 日志类型， 内容
+
+LogTemp     Log,Warning,Error,Display   TEXT("zzz")
+
+// 4 5 格式化整数 %d                     %f   %.2f  两位小数(四舍五入)    %s
+
+UE_LOG(LogTemp, Warning, TEXT("Tom %d years old", year))
+
+// 组合格式化 就是多个%d
+
+// 输出到屏幕
+
+// 是否替换上个参数，   显示时间    显示颜色   内容
+
+1为替换上一个 -1会不替换上一个
+
+GEngine->OnAddOnScreenDebugMessage()
+
+默认ANSI 编码 中文有问题 =》 研究
+
+[BeginPlay | Learning path](https://dev.epicgames.com/community/learning/paths/0w/unreal-engine-beginplay)
 
 # Engine Structe
 
@@ -54,7 +78,7 @@ FText 本地化String 任何面向用户的文本
 
 ### Collections
 
-TArray TMap TSet
+TArray TMap TSet      
 
 TMap 底层也是用TSet  哈希表桶
 
@@ -227,7 +251,7 @@ TWeakPtr
 
 ### PlayerState
 
-PlayerController的辅助类,存在于Server和所有clients
+PlayerController的辅助类,存在于Server和所有clients 
 
 用于分享player info 在各个client中
 
@@ -239,7 +263,7 @@ Controller easily possess(具有) and unpossess Pawns. Server和各自客户端�
 
 ### Pawn / Character
 
-物理身体 用于表现action和behavior
+物理身体 用于表现action和behavior 
 
 Can be possess by Controller and perform commands
 
