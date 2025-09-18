@@ -251,8 +251,6 @@ FTExt 文本化翻译                          不可变
 
 GC 用了标记清除方法 分散多个帧 执行
 
-
-
 ## TArray
 
 `TArray` is a value type, meaning that it should be treated similarly as any other built-in type, like `int32` or `float`. It is not designed to be extended, and creating or destroying `TArray` instances with `new` and `delete` is not a recommended practice
@@ -260,8 +258,6 @@ GC 用了标记清除方法 分散多个帧 执行
 The elements are also value types, and the array owns them. Destruction of a `TArray` will result in the destruction of any elements it still contains. Creating a TArray variable from another will copy its elements into the new variable; there is no shared state.
 
 同一类型, 值类型. 
-
-
 
 ```
 // 声明
@@ -275,22 +271,15 @@ TArray<string> StrArr;
 StrArr.Add(TEXT("Hello");
 StrArr.Emplace(TEXT("World"));
 // StrArr = ["Hello", "World"]
-
 ```
 
 - `Add` (or `Push`) will copy (or move) an instance of the element type into the array.
 
 - `Emplace` will use the arguments you give it to construct a new instance of the element type.
 
-
-
-以上例子中, Add 会创建一个临时的FString 然后把这个临时的FString移动到一个心得FString中, 而Emplace会直接用字符创建一个新的FString. 结果是一样的 但是Emplace避免了临时变量
-
-
+以上例子中, Add 会创建一个临时的FString 然后把这个临时的FString移动到一个新的FString中, 而Emplace会直接用字符创建一个新的FString. 结果是一样的 但是Emplace避免了临时变量
 
 As a rule of thumb, use `Add` for trivial types and `Emplace` otherwise. `Emplace` will never be less efficient than `Add`, but `Add` may read better.
-
-
 
 ```cpp
 FString Arr[] = {TEXT("of", TEXT("Tomorrow")};
@@ -307,19 +296,12 @@ StrArr.AddUnique(TEXT("!"));
 
 StrArr.Insert(TEXT("Brave"), 1);
 // StrArr == ["Hello","Brave","World","of","Tomorrow","!"]
-
 ```
-
-
 
 ```
 StrArr.SetNum(8);
 // StrArr == ["Hello","Brave","World","of","Tomorrow","!","",""]
 ```
-
-
-
-
 
 迭代 Iteration
 
@@ -334,20 +316,18 @@ for (auto& Str: JoinedStr)
 
 for (int32 Index = 0; Index != StrArr.Num(); ++Index)
 {
-	JoinedStr += StrArr[Index];
-	JoinedStr += TEXT(" ");
+    JoinedStr += StrArr[Index];
+    JoinedStr += TEXT(" ");
 }
 
 // CreateIterator      read-write access
 // CreateConstIterator read-only access
 for (auto It = StrArr.CreateConstIterator(); It; ++It)
-	{
-		JoinedStr += *It;
-		JoinedStr += TEXT(" ");
-	}
+    {
+        JoinedStr += *It;
+        JoinedStr += TEXT(" ");
+    }
 ```
-
-
 
 排序
 
@@ -358,56 +338,52 @@ StrArr.Sort();
 
 FString是大小写不敏感的字典比较
 StrArr.Sort([](const FString& A, const FString& B) {
-		return A.Len() < B.Len();
-	});
-	// StrArr == ["!","of","Hello","Brave","World","Tomorrow"]
+        return A.Len() < B.Len();
+    });
+    // StrArr == ["!","of","Hello","Brave","World","Tomorrow"]
 ```
 
-Sort是不稳定的    而且是以快排Quick sort的形式实现的
+Sort是不稳定的    而且是以快排Quick Sort的形式实现的s
 
 HeapSort也是不稳定的
 
-
-
 StableSort是稳定的    以merge sort 实现的?
-
-
 
 ```cpp
 int32 Count = StrArr.Num();
 
 FString* StrPtr = StrArr.GetData();
-	// StrPtr[0] == "!"
-	// StrPtr[1] == "of"
-	// ...	// StrPtr[5] == "Tomorrow"
-	// StrPtr[6] - undefined behavior
+    // StrPtr[0] == "!"
+    // StrPtr[1] == "of"
+    // ...    // StrPtr[5] == "Tomorrow"
+    // StrPtr[6] - undefined behavior
 
 
-	FString Elem1 = StrArr[1];
-	// Elem1 == "of"
+    FString Elem1 = StrArr[1];
+    // Elem1 == "of"
 
-	bool bValidM1 = StrArr.IsValidIndex(-1); // false
+    bool bValidM1 = StrArr.IsValidIndex(-1); // false
 
 
 FString ElemEnd  = StrArr.Last();  // Tomorrow
-	FString ElemEnd1 = StrArr.Last(1); // World
-	FString ElemTop  = StrArr.Top(); // Tomorrow
+    FString ElemEnd1 = StrArr.Last(1); // World
+    FString ElemTop  = StrArr.Top(); // Tomorrow
 
 
-	bool bLen5 = StrArr.ContainsByPredicate([](const FString& Str){
-		return Str.Len() == 5;
-	});
+    bool bLen5 = StrArr.ContainsByPredicate([](const FString& Str){
+        return Str.Len() == 5;
+    });
 
 
 int32 Index = StrArr.IndexOfByKey(TEXT("Hello"));
-	// Index == 3
+    // Index == 3
 
 int32 Index = StrArr.IndexOfByPredicate([](const FString& Str){
-		return Str.Contains(TEXT("r"));
-	});
+        return Str.Contains(TEXT("r"));
+    });
 
 
-	auto* OfPtr  = StrArr.FindByKey(TEXT("of"))); 返回指针 空时// OfPtr  == &StrArr[1]
+    auto* OfPtr  = StrArr.FindByKey(TEXT("of"))); 返回指针 空时// OfPtr  == &StrArr[1]
 ```
 
 Last(int idx = 0)   ==  Top()
@@ -417,8 +393,6 @@ Cotains
 Find 
 
 FindLast
-
-
 
 Remove(value)会移除所有
 
@@ -432,28 +406,21 @@ RemoveAll([] int 32 Val) {
 
 }
 
-
-
 RemoveSwap   删除后不会保证顺序  但效率好很多
 
 RmoveAtSwap   RemoveAllSwap
-
-
 
 可以Call   Heapify 转为Heap
 
 ```
 // HeapArr == [10,9,8,7,6,5,4,3,2,1]
-	HeapArr.Heapify();
-	// HeapArr == [1,2,4,3,6,5,8,10,7,9]
-
+    HeapArr.Heapify();
+    // HeapArr == [1,2,4,3,6,5,8,10,7,9]
 ```
 
 `HeapPop`   会return copy of top element
 
 `HeapPopDiscard`  no return
-
-
 
 Num() 当前元素个数
 
@@ -461,21 +428,13 @@ Max()  已分配容量 类似 capacity()
 
 GetSlack()  Max - Num
 
-
-
 Empty(3) 创建容量为三
 
 Reset 不会减少 但会增加 Capacity
 
 Shrink 调整至Num 数量
 
-
-
-
-
 UE 里多用 `check()` 或 `ensure()` 来断言
-
-
 
 Addxxxx, Insertxxxx 会增加未初始化的空间,但不会调用类型的构造器.
 
@@ -493,15 +452,9 @@ SetNumUninitialized
 
 AddZeroed
 
-
-
-
-
 ## TMap
 
 TMap类似TSet 结构是类似于HasingKeys     Tmap K-V Pairs
-
-
 
 两种Map   TMap  TMultiMap
 
@@ -509,31 +462,17 @@ TMap的element 指 kv-pair
 
 TMap也是值类型  类似TArray也是homogeneous container   所有元素都是相同的类型
 
-
-
 如果增加新的kv-pairs 会覆盖旧的  MultiMap 都保存
-
-
 
 ## TMultiMap
 
 Key可重复，  一对多的关系， 内部用为Key维护一个链表                    
 
-
-
-
-
-
-
 Add()
 
 Emplace()
 
-
-
 Append() 合并两个Map
-
-
 
 MapA.Append(MapB) 
 
@@ -541,22 +480,18 @@ MapA.Append(MapB)
 
 MapB会变成Empty
 
-
-
 AddRange         Concat  Array.Copy
-
-
 
 ```cpp
 for (auto& Elem : FruitMap)
 {
-	FPlatformMisc::LocalPrint(
-		*FString::Printf(
-			TEXT("(%d, \"%s\")\n"),
-			Elem.Key,
-			*Elem.Value
-		)
-	);
+    FPlatformMisc::LocalPrint(
+        *FString::Printf(
+            TEXT("(%d, \"%s\")\n"),
+            Elem.Key,
+            *Elem.Value
+        )
+    );
 
 
 for (auto It = FruitMap.CreateConstIterator(); It; ++It)}
@@ -564,11 +499,7 @@ for (auto It = FruitMap.CreateConstIterator(); It; ++It)}
     It.Key()   // It->Key
     *It.Value() // *It->Value
 }
-
-
 ```
-
-
 
 Contains()
 
@@ -578,11 +509,7 @@ FindOrAdd() 会创建新element 不能用于const map
 
 FindRef()   不创建新element 都可用
 
- 
-
 FindKey()
-
-
 
 // 保证数量是key >= value 
 
@@ -590,8 +517,30 @@ GenerateKeyArray()
 
 GenerateValueArray()
 
-
-
 Remove()
 
-FindAndRemoveChecked()
+FindAndRemoveChecked() 
+
+
+
+## TSet
+
+
+
+
+
+Slack 指的是不包含数字的已分配内存
+
+可以通过Reserve 来 allocate 内存
+
+Reset 可以清空所有element 但保留已allocate的容量
+
+
+
+`Empty` and `Reset` are similar, but `Empty` can take a parameter to indicate how much slack to leave in the set, while `Reset` always leaves as much slack as possible.
+
+
+
+Shrink() 从后往前删除 slack
+
+CompactStable() 会按顺序排序, 然后Slack都在最后
