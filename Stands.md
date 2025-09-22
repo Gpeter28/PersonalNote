@@ -9,3 +9,9 @@ Intel XeSS   Xe Super Sampling
 
 
 Ghosting 鬼影
+
+R&D   Research & Development
+
+TAA Temporal Anti-Aliasing
+
+cathode-ray tube CRT
