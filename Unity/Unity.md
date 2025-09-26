@@ -65,25 +65,25 @@ http://www.ileichun.com/blog/unity3d/736.html
 1.单例
 
 ```c#
-public class PlayerAttack : MonoBehaviour {  
+public class PlayerAttack : MonoBehaviour {
 
-  public static PlayerAttack _instance; // static关键字，单例模式  
+  public static PlayerAttack _instance; // static关键字，单例模式
 
 
 
-  void Awake(){  
+  void Awake(){
 
-​    _instance = this;// 确保在使用前已被初始化  
+​    _instance = this;// 确保在使用前已被初始化
 
-  }  
+  }
 
 
 
   public void TakeDamage(int damage){  // 可被外部调用的方法
 
-​     
+​
 
-  }  
+  }
 
 }
 
@@ -103,13 +103,13 @@ public class Enemy : MonoBehaviour {
 2. static
 
 ```c#
-public class PlayerAttack : MonoBehaviour {  
+public class PlayerAttack : MonoBehaviour {
 
   public static void TakeDamage(int damage){  // 可被外部调用的方法
 
-​     
+​
 
-  }  
+  }
 
 }
 ```
@@ -117,69 +117,69 @@ public class PlayerAttack : MonoBehaviour {
 3.使用GameObject的SendMessage()
 
 ```c#
-public class PlayerAttack : MonoBehaviour {  
+public class PlayerAttack : MonoBehaviour {
 
   public void TakeDamage(int damage){  // 可被外部调用的方法
 
-​     
+​
 
-  }  
+  }
 
 }
 
 
 
-public class Enemy : MonoBehaviour {  
+public class Enemy : MonoBehaviour {
 
-  void Attack(){  
+  void Attack(){
 
    // 主角模型的tag为PlayerBoy
 
 ​    GameObject p = GameObject.FindGameObjectWithTag("PlayerBoy");
 
-​    p.SendMessage("TakeDamage", 20);  
+​    p.SendMessage("TakeDamage", 20);
 
-  }  
+  }
 
 }
 ```
 
 4. 获取到某个对象的Script组件
 
-这个脚本放在cube上 
+这个脚本放在cube上
 
 ```c#
-public class Score : MonoBehaviour {  
+public class Score : MonoBehaviour {
 
-  public  int allScore=100;  
+  public  int allScore=100;
 
-  void Update () {  
+  void Update () {
 
 ​    ...
 
-  }  
+  }
 
-}  
+}
 
 
 
 访问Score.allScore
 
-public class Text : MonoBehaviour {  
+public class Text : MonoBehaviour {
 
-  public GameObject Obj1;  
+  public GameObject Obj1;
 
-  void Start () {  
+  void Start () {
 
-​    Obj1 = GameObject.Find("Cube");  
+​    Obj1 = GameObject.Find("Cube");
 
 ​    Score script=Obj1.GetComponent<Score>(); // 取对象的Script组件
 
-​    Debug.Log(script.allScore);  
+​    Debug.Log(script.allScore);
 
-  }  
+  }
 
-} 
+}
 ```
 
 # Unity优化
@@ -355,13 +355,13 @@ var arr = go.GetComponentsInChilderen<Transform>();
 
 什么是事件(event) ?
 
-event是在delegate上又做了一次封装，这次封装的意义是，限制用户直接操作delegate实例中的变量权限。（不再提供 "="操作符。‘
+event是在delegate上又做了一次封装，这次封装的意义是，限制用户直接操作delegate实例中的变量权限。（不再提供 "="操作符。/
 
 ### 2.6 排序算法
 
 写程序比的是谁**基础能力**强，谁的**算法效率**高，对**底层原理**更加熟知于心，
 
-### 
+###
 
 #### 2.6.1 快排
 

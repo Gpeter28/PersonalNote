@@ -25,27 +25,27 @@ A **struct** is a data structure that helps you organize and manipulate its me
 智能指针: 针对非Object对象
 
 - **`TSharedPtr`**（共享指针）
-  
+
   - 引用计数智能指针，会管理所引用对象的生命周期，直到最后一个引用被释放。可以为空。
-  
+
   - **使用场景**：管理普通 C++ 对象，多个地方共享访问某个对象。
 
 - **`TSharedRef`**（共享引用）
-  
+
   - 类似 `TSharedPtr`，但不能为空（必须引用有效对象），更安全。
-  
+
   - **使用场景**：确保引用对象一定存在，通常用于函数参数或复杂逻辑中，避免空指针风险。
 
 - **`TWeakPtr`**（弱指针）
-  
+
   - 不拥有引用对象，不参与引用计数，可避免循环引用；使用前需将其转换为 `TSharedPtr` （通常用 `.Pin()`），并检查其是否有效。
-  
+
   - **使用场景**：观察对象生命周期，不延长它的存活时间，如缓存或回调引用。
 
 - **`TUniquePtr`**（唯一指针）
-  
+
   - 独占所有权，不可复制，只能移动，超出作用域自动清理对象。
-  
+
   - **使用场景**：管理独占所有权资源，类似标准 C++ 的 `std::unique_ptr`。
 
 这些智能指针只适用于**非 UObject 类型**，即普通 C++ 类或结构体，并不适合用于 UObject 或 Actor 等存在垃圾回收机制的对象 [Epic Games Developers](https://dev.epicgames.com/documentation/zh-cn/unreal-engine/smart-pointers-in-unreal-engine?utm_source=chatgpt.com)[掘金](https://juejin.cn/post/7127952891351924772?utm_source=chatgpt.com)。
@@ -55,19 +55,19 @@ A **struct** is a data structure that helps you organize and manipulate its me
 平时我们在 Unreal 中使用如下指针类型来管理 UObject 实例（如 `AActor`）：
 
 - **裸指针（例如 `AActor*`）**
-  
+
   - 没有生命周期管理，有风险：对象销毁后不会自动清空指针，可能造成悬空指针事故。
 
 - **`TObjectPtr<UObjectType>`**（UE5 引入）
-  
+
   - 类似于 `UObject*`，但增强了类型安全性并可被 GC 追踪。**UPROPERTY 标记时最佳实践**。
 
 - **`TWeakObjectPtr<UObjectType>`**
-  
+
   - 对 UObject 的弱指针引用，GC 后自动失效，避免悬挂。
 
 - **`TSoftObjectPtr<UObjectType>`**
-  
+
   - 存储 UObject 的路径，可延迟加载对象，减少内存占用，避免硬依赖。
 
 这些都是用于 Unreal 内建对象系统（UObject 架构）中、更安全、更高效地管理对象生命周期的类型。
@@ -83,11 +83,11 @@ A **struct** is a data structure that helps you organize and manipulate its me
 - 如果对象被销毁，`TWeakObjectPtr` 会自动失效（`IsValid()` 返回 false）。
 
 - **使用场景：**
-  
+
   - 临时缓存对象（比如 UI 里指向一个角色，角色随时可能消失）。
-  
+
   - 避免循环引用。
-  
+
   - 不保证对象存活，只在需要的时候判断。
 
 ---
@@ -99,9 +99,9 @@ A **struct** is a data structure that helps you organize and manipulate its me
 - 在访问时，如果对象还没加载，会触发异步/同步加载。
 
 - **使用场景：**
-  
+
   - 常用于指向资源（比如关卡配置里引用了一张 Texture 或 Sound，但不想一开始就加载进内存）。
-  
+
   - 避免硬依赖（减少打包体积，提高初始加载速度）。
 
 ---
@@ -113,11 +113,11 @@ A **struct** is a data structure that helps you organize and manipulate its me
 - 本质还是裸指针（`T*`），但增加了类型安全和垃圾回收标记，避免直接用 `UObject*` 时可能出现的问题。
 
 - **使用场景：**
-  
+
   - UE5 推荐替代 `UObject*` 的写法，比如：
-    
+
     `UPROPERTY() TObjectPtr<AActor> OwnerActor;`
-  
+
   - 一般用在 UPROPERTY 中，保证对象能被 GC 正确追踪。
 
 ---
@@ -129,11 +129,11 @@ A **struct** is a data structure that helps you organize and manipulate its me
 - `TSharedPtr` 用于堆对象的共享所有权管理，`TWeakPtr` 用于弱引用。
 
 - **使用场景：**
-  
+
   - 非 UObject 类型（比如 Slate UI 元素 `SWidget`、数据结构、工具类对象）。
-  
+
   - 生命周期明确、需要引用计数的情况。
-  
+
   - **注意**：UObject 不要用 `TSharedPtr` 管理！UObject 的生命周期由 GC 负责。
 
 ---
@@ -145,9 +145,9 @@ A **struct** is a data structure that helps you organize and manipulate its me
 - **优点**：灵活、C++ 原生操作。
 
 - **缺点**：
-  
+
   - 如果 Actor 被销毁，指针会悬空，可能导致 Crash。
-  
+
   - 不会参与 UE 的 GC，除非放到 `UPROPERTY()` 中。
 
 而上面那四种指针，就是对裸指针的**封装和管理**：
@@ -186,57 +186,57 @@ actor->GetController();  // 解引用
 Unreal 中常见的指针类型有不同的解引用方式：
 
 - **裸指针 (`AActor*`)**
-  
+
   - 直接解引用，和普通 C++ 一样。
-  
+
   - 成本：1 次内存读取（极快，基本无消耗）。
-  
+
   - 风险：对象被 Destroy/GC 后就悬空了。
 
 ---
 
 - **`TObjectPtr<AActor>` (UE5 引入)**
-  
+
   - 内部封装了一个裸指针（其实是 `AActor*`），加了一点类型安全和 GC 标记。
-  
+
   - 解引用时基本就是直接取出裸指针并用。
-  
+
   - 成本：和裸指针几乎一样，可能会多一道内联函数调用（编译器通常会优化掉）。
 
 ---
 
 - **`TWeakObjectPtr<AActor>`**
-  
+
   - 内部存的不是直接的裸指针，而是 `FWeakObjectPtr`，包含了 **对象索引 + 弱引用标记**。
-  
+
   - `Get()` 时会检查对象是否还活着，如果对象被 GC，则返回 `nullptr`。
-  
+
   - 成本：比裸指针多一次 **有效性检查**（哈希表/数组查找）。通常是 O(1)，比直接裸指针略慢。
 
 ---
 
 - **`TSoftObjectPtr<AActor>`**
-  
+
   - 内部保存的是 **FSoftObjectPath**（字符串路径），并不会直接持有对象。
-  
+
   - 调用 `.Get()` 时，如果对象没加载，会触发同步/异步加载。
-  
+
   - 成本：
-    
+
     - 如果对象已在内存中：基本上就是查表 → 返回指针，开销 ≈ `TWeakObjectPtr`。
-    
+
     - 如果对象未加载：可能触发磁盘 IO，代价极大（毫秒级甚至秒级）。
 
 ---
 
 - **`TSharedPtr` / `TUniquePtr` / `TWeakPtr`**（非 UObject）
-  
+
   - 解引用成本和标准 C++ 智能指针相同：
-    
+
     - `TSharedPtr` 内部有一个引用计数控制块，多了一次引用计数的读取。
-    
+
     - `TUniquePtr` 基本就是裸指针。
-    
+
     - `TWeakPtr` 需要 `.Pin()` 成功才能解引用，会做一次引用计数检查。
 
 和standard C++ references 不同     Unreal Shared References 创建后可以被重新分配
@@ -257,7 +257,7 @@ GC 用了标记清除方法 分散多个帧 执行
 
 The elements are also value types, and the array owns them. Destruction of a `TArray` will result in the destruction of any elements it still contains. Creating a TArray variable from another will copy its elements into the new variable; there is no shared state.
 
-同一类型, 值类型. 
+同一类型, 值类型.
 
 ```
 // 声明
@@ -287,7 +287,7 @@ StrArr.Append(Arr, ARRAY_COUNT(Arr));
 // StrArr == ["Hello","World","of","Tomorrow"]
 ```
 
-AddUnique只会添加container中没有存在的元素 
+AddUnique只会添加container中没有存在的元素
 
 ```cpp
 StrArr.AddUnique(TEXT("!"));
@@ -390,7 +390,7 @@ Last(int idx = 0)   ==  Top()
 
 Cotains
 
-Find 
+Find
 
 FindLast
 
@@ -474,9 +474,9 @@ Emplace()
 
 Append() 合并两个Map
 
-MapA.Append(MapB) 
+MapA.Append(MapB)
 
-// 所有B的元素会在A的后面加进去 类似C#  
+// 所有B的元素会在A的后面加进去 类似C#
 
 MapB会变成Empty
 
@@ -511,7 +511,7 @@ FindRef()   不创建新element 都可用
 
 FindKey()
 
-// 保证数量是key >= value 
+// 保证数量是key >= value
 
 GenerateKeyArray()
 
@@ -519,7 +519,7 @@ GenerateValueArray()
 
 Remove()
 
-FindAndRemoveChecked() 
+FindAndRemoveChecked()
 
 
 
