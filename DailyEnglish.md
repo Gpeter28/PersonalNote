@@ -74,3 +74,38 @@ inherently 本质上 adv.
 deliberate （常指坏事）有意的，蓄意的/  沉稳的  adj.
 
 captivating 吸引人的  adj.
+
+courteous  有礼貌的,客气的 adj.
+
+integrity 正直,诚实的 adj.
+
+10_9 Rolling The Dice with CSS random()
+
+spontaneous 自发的 adj.
+
+round numbers 整数  A round number is an integer that ends with one or more "0"s (zero-digit) in a given base
+
+odd numbers 奇数
+
+even numbers 偶数
+
+
+quintessential 最本質的 adj.
+
+startling 令人惊讶的 adj.
+
+inscrutable 难以理解的 adj.
+
+fanciful 想象的 adj.
+
+longitude  经度 n.
+
+latitude   纬度 n.
+
+bias 偏见 n.
+
+churns 搅拌,搅动 v.
+
+Voilà 看
+
+sophisticated  精密的,高级的 / 老练的,见多识广的 adj.
