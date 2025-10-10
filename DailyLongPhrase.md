@@ -5,4 +5,12 @@ tell A from B (phr.) 分辨 A 與 B
 
 akin to 类似
 
-by one's time ：　　wait quietly for a good opportunity to do something.
+bide one's time ：　　to wait patiently for a good opportunity to do something:
+
+i couldn't recommend more to ....
+i cannot more highly recommend to ....
+
+
+//
+I can’t recommend the book enough...
+https://english.stackexchange.com/questions/95890/usage-of-recommend

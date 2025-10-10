@@ -109,3 +109,50 @@ churns 搅拌,搅动 v.
 Voilà 看
 
 sophisticated  精密的,高级的 / 老练的,见多识广的 adj.
+
+pendulum 摆，摆锤 n.
+
+10_10 [Absolum] Review
+
+compelled 被迫的 adj.
+
+composer  作曲家 n.
+
+addict 有瘾的人 n.
+addictive 使人上瘾的 adj.
+
+diverse 多样化的 adj.
+
+ethnically 种族 adj.
+
+incentive 激励,鼓励 n.
+
+clunky 笨重的 adj.
+
+sponge 海绵 n.
+
+slog 鍥而不捨地做（尤指困難或乏味的工作）/ 艰难前行 v.
+
+fervently  热情的 adj.
+
+cumbersome 笨重的 adj.
+
+malleable 具延展性的，易变形的 adj.
+
+irony 具有讽刺意味，出乎意料的情况 n.
+
+sarcasm 讽刺，挖苦，嘲笑　n.
+
+conundrum 难题 n.
+
+tenuous (思想)不确定的 /  单薄的,脆弱的 adj.
+
+*paradox 悖论 n.
+
+reckon 想,认为 v.
+
+obesity 肥胖 n.
+
+obsessed 心神不宁的,困扰的 adj.
+
+pernicious 极其有害,恶行的 adj.
