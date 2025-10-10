@@ -1,49 +1,54 @@
-9_12 Steam Review Borders land 4
+## 9_12 Steam Review Borders land 4
 
-spin-off 衍生
+spin-off 衍生产品, 副产品  n.       spin something off 派生出,衍生出 phrasal verb短语动词
 
-cliff 悬崖
+cliff 悬崖 n.
 
-gourmet 美食
+gourmet  优质的食品  / 提供美食的 adj.     a xxxx chef
 
-gorgeous 华丽的
+gorgeous 极其漂亮的,美丽动人的 adj.
 
-immersing 沉浸
+immerse 沉浸 v.
 
-9_16 Dream of Shape Review
+## 9_16 Dream of Shape Review
 
-Cramped 狭窄
+Cramped 狭窄 adj.
 
-dazzling 令人眼花缭乱
+dazzling 令人眼花缭乱 adj.
 
-WTF To UE Video
 
-instincts 本能
 
-translucent 半透明
+WTF To UE Game   ---   Video
 
-deformable 可变形的
+instincts 本能  n.
 
-smeare 涂抹
+translucent 半透明 adj.
 
-hiccup 突兀
+deformable 可变形的 adj.
 
-new biome 新环境
+smear 涂抹 v.
 
-traversal 穿越
+hiccup 突兀 打嗝 n. 
+
+new biome 新环境, 生物圈
+
+traversal 穿越 n.
 
 frontier 前沿,边境
 
-sabotaging 毁坏,破坏(为了阻止对手/敌人而采取的行动)
+sabotaging 毁坏,破坏(为了阻止对手/敌人而采取的行动) v.    
 
-9_25 Deadly Days RoadTrip Review
+(F1电影里的 黑哥朋友说的  桑尼 May be a sabotage)
+
+## 9_25 Deadly Days RoadTrip Review
+
 wackier 古怪
 
-hypothetically 假设,设想
+hypothetically 假设,设想  adv.
 
-statement 陈述, 表述
+statement 陈述, 表述 n.
 
-phrase 短语
+phrase 短语 n.
 
 proposition 逻辑,哲学,语言学里 表示一个命题,陈述性句子表达的内容
 
@@ -79,7 +84,7 @@ courteous  有礼貌的,客气的 adj.
 
 integrity 正直,诚实的 adj.
 
-10_9 Rolling The Dice with CSS random()
+## 10_9 Rolling The Dice with CSS random()
 
 spontaneous 自发的 adj.
 
@@ -88,7 +93,6 @@ round numbers 整数  A round number is an integer that ends with one or more "0
 odd numbers 奇数
 
 even numbers 偶数
-
 
 quintessential 最本質的 adj.
 
@@ -112,7 +116,7 @@ sophisticated  精密的,高级的 / 老练的,见多识广的 adj.
 
 pendulum 摆，摆锤 n.
 
-10_10 [Absolum] Review
+## 10_10 [Absolum] Review
 
 compelled 被迫的 adj.
 
