@@ -270,3 +270,31 @@ possess v. 拥有 持有
 afflict v. 折磨
 
 cafeteria 自助餐馆 n.
+
+
+
+# 10_18
+
+commodity 商品 n.
+
+rational 理性的，合理的 adj.  有理数  n.
+
+plausible 貌似有理的；（人）花言巧语的 adj.
+
+obedient 服从的；顺从的 adj.
+
+grope 摸索v.   ； 摸，猥亵 n.
+
+frantic 紧张忙乱的； （恐惧/担心）无法控制感情的
+
+rehearsal  排练，复述，重复 n.
+
+
+
+disperse 分散， 散布v.    分散的 adj.per
+
+avert  防止，避免； 转移 v.
+
+vicious 严厉的，恶意的，恶劣的 adj.
+
+enormous 巨大的， 极大的 adj.
