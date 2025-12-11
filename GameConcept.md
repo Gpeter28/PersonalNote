@@ -68,3 +68,42 @@
 作为用于描述现实空间的坐标表示方式，人们在复数的基础上创造了四元数并以a+bi+cj+dk的形式说明空间点所在位置。 i、j、k作为一种特殊的虚数单位参与运算，并有以下运算规则：i0=j0=k0=1，i2=j2=k2=-1
 
 欧拉角
+
+
+
+
+
+
+
+
+
+## Unity
+
+### GC
+
+GC.Alloc()  托管堆上分配内存  25KB左右
+
+达到阈值  Threshold 会触发GC 
+
+但现在是增程式  Unity Incremental 会分好几帧去执行
+
+
+
+lambda表达式 捕获了外部变量  this.go  transform.position 会导致堆分配，会创建临时委托 实例和闭包类。  .ToList会强制求值 
+
+https://www.bilibili.com/video/BV1DkUsB6EVQ/
+
+
+
+ZLINQ?
+
+ ABTest?
+
+
+
+
+
+SriptableObject 不只是数据容器， 还是链接C# 托管内存和原生引擎内存的桥梁（C++)
+
+https://www.bilibili.com/video/BV15144zDExA/
+

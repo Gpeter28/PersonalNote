@@ -279,11 +279,11 @@ commodity 商品 n.
 
 rational 理性的，合理的 adj.  有理数  n.
 
-plausible 貌似有理的；（人）花言巧语的 adj.
+plausible 貌似有理的;（人）花言巧语的 adj.
 
 obedient 服从的；顺从的 adj.
 
-grope 摸索v.   ； 摸，猥亵 n.
+grope 摸索v.   / 摸，猥亵 n.
 
 frantic 紧张忙乱的； （恐惧/担心）无法控制感情的
 
@@ -298,3 +298,30 @@ avert  防止，避免； 转移 v.
 vicious 严厉的，恶意的，恶劣的 adj.
 
 enormous 巨大的， 极大的 adj.
+
+
+
+
+
+# 10_25
+
+versatile 多才多艺，多功能的 adj.
+
+permissble 允许的 adj.
+
+exaggeration 夸张，名言其实 n.
+
+concise 简洁的 adj.
+
+thesis 论文 n.
+
+hamper v. 阻碍  礼物蓝 n.
+
+bump 撞v. n. 肿块
+
+implication 可能的影响， 牵连，涉及 n.
+
+envisage 设想，展望 v.
+
+wrestle 摔跤，努力解决 v.  n.摔跤
+
