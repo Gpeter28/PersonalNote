@@ -15,3 +15,19 @@ R&D   Research & Development
 TAA Temporal Anti-Aliasing
 
 cathode-ray tube CRT
+
+
+
+## TCP/IP
+
+CUI  Character User Interface
+
+LAN   WAN       local area network / wide xxxxxxxx
+
+
+
+
+
+TCP    Transmission Control Protocol
+
+IP        Internet Protocol

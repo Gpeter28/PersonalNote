@@ -24,3 +24,29 @@ AABB算法 (Axis-Aligned Bounding Box)
 
 
 OBB 算法 ( Oriented Bounding Box )
+
+
+
+A*算法   启发式
+
+
+
+f(n) = g(n) + h(n)
+
+g(n) 实际代价（已经走过的路）
+
+h(n) 启发代价（预估剩余的路）
+
+f(n) 综合优先级
+
+
+
+通过不断的压入节点 通过知道 gn hn  得到最后的 fn
+
+然后不断的弹出最小的fn
+
+
+
+Dijk 只看走过的路  （广度优先） 会探索许多节点位置
+
+ 
